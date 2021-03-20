@@ -35,10 +35,8 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == ADD_WISH_INTENT && resultCode == Activity.RESULT_OK) {
             data?.let {
-               //TODO
                 val wish = it.getSerializableExtra(AddWishActivity.WISH_KEY) as Wish
-                wishes.add(wish)
-                adapter.notifyDataSetChanged()
+                adapter.add(wish)
             }
         }
     }
